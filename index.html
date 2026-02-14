@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Valentine’s Day ❤</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 400px;
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      color: #e63946;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .heart {
+      font-size: 50px;
+      color: #e63946;
+      animation: beat 1s infinite;
+      margin: 20px 0;
+    }
+    button {
+      background: #e63946;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #d62839;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Happy Valentine’s Day</h1>
+    <div class="heart">❤</div>
+    <p id="message">You make my world brighter just by being in it.</p>
+    <button onclick="changeMessage()">Click for a Surprise</button>
+  </div>
+
+  <script>
+    const messages = [
+      "You are my today, tomorrow, and forever 💕",
+      "Every love story is beautiful, but ours is my favourite 💖",
+      "With you, every day feels like Valentine’s Day 💝",
+      "You are the reason my heart smiles 😊",
+      "I am so lucky to have you in my life ❤"
+    ];
+    let index = 0;
+
+    function changeMessage() {
+      index = (index + 1) % messages.length;
+      document.getElementById("message").innerText = messages[index];
+    }
+  </script>
+</body>
+</html>
